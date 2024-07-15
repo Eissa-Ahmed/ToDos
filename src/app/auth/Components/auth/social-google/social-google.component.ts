@@ -29,7 +29,6 @@ export class SocialGoogleComponent implements OnInit {
 
   onLoginWithGoogle() {
     this.toggleBtnGoogle.set(true);
-    this.initializeGoogleSignIn();
   }
   initializeGoogleSignIn() {
     google.accounts.id.initialize({
@@ -42,7 +41,9 @@ export class SocialGoogleComponent implements OnInit {
       { theme: 'filled_blue', size: 'large', shape: 'rectangle' }
     );
     google.accounts.id.prompt();
+
   }
+
 
   handleCredentialResponse(response: any) {
     this.authService.ContinueWithGoogle(response.credential).subscribe({
