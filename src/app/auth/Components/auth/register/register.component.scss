@@ -1,0 +1,29 @@
+.parent {
+  height: 100vh;
+  .row {
+    .btn {
+      background-color: #ff7f3e;
+      color: white;
+      &:hover {
+        background-color: #ff7f3ecc;
+      }
+      &:active {
+        border: none;
+        color: white;
+      }
+    }
+  }
+  .login {
+    a {
+      text-decoration: none;
+      color: #ff7f3e;
+      &:hover {
+        color: #ff7f3ecc;
+      }
+    }
+  }
+}
+
+.c-grey {
+  color: grey;
+}

@@ -1,0 +1,33 @@
+.parent {
+  height: 100vh;
+  .row {
+    .btn {
+      background-color: #ff7f3e;
+      color: white;
+      &:hover {
+        background-color: #ff7f3ecc;
+      }
+      &:active {
+        border: none;
+        color: white;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: #ff7f3e;
+  &:hover {
+    color: #ff7f3ecc;
+  }
+}
+
+.forget-signup {
+  small {
+    color: grey;
+    &:last-child {
+      cursor: pointer;
+    }
+  }
+}

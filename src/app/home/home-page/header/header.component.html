@@ -1,0 +1,30 @@
+<div class="parent">
+  <div class="container">
+    <nav class="d-flex justify-content-center align-items-center">
+      <ul
+        class="flex-fill d-flex justify-content-center align-items-center gap-3"
+      >
+        <li>
+          <a routerLink="/home/all" routerLinkActive="active" i18n>Home</a>
+        </li>
+        <li>
+          <a routerLink="/home/pictures" routerLinkActive="active" i18n
+            >Pictures</a
+          >
+        </li>
+        <li>
+          <a routerLink="/home/videos" routerLinkActive="active" i18n>Videos</a>
+        </li>
+        <li>
+          <a routerLink="/home/audios" routerLinkActive="active" i18n>Audios</a>
+        </li>
+        <li>
+          <a routerLink="/home/files" routerLinkActive="active" i18n>Files</a>
+        </li>
+      </ul>
+      <div class="logout" (click)="onLogout()">
+        <i class="fa-solid fa-right-from-bracket"></i>
+      </div>
+    </nav>
+  </div>
+</div>

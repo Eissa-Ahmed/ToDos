@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="2454050363478003966" datatype="html">
+        <source>Login</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">280,281</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4768749765465246664" datatype="html">
+        <source>Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">97,98</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2959204602504613773" datatype="html">
+        <source>* email is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">25,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4175754466001400579" datatype="html">
+        <source>* email is not valid</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">30,31</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1431416938026210429" datatype="html">
+        <source>Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">132,133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5565872428498585440" datatype="html">
+        <source>* password is required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1961026839933978465" datatype="html">
+        <source><x id="START_BLOCK_IF" equiv-text="@if (isLoading()) {"/><x id="START_TAG_APP_LOADER_BTN" ctype="x-app_loader_btn" equiv-text="&lt;app-loader-btn&gt;"/><x id="CLOSE_TAG_APP_LOADER_BTN" ctype="x-app_loader_btn" equiv-text="&lt;/app-loader-btn&gt;"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Login <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">61,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2950600607347308247" datatype="html">
+        <source>Don&apos;t have an account? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3301086086650990787" datatype="html">
+        <source>Register</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">79,80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9020283069706102881" datatype="html">
+        <source>Forget Password ?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/login/login.component.html</context>
+          <context context-type="linenumber">82,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="22574054480616841" datatype="html">
+        <source>Register New Account</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6028371114637047813" datatype="html">
+        <source>First Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">13,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4407559560004943843" datatype="html">
+        <source>Last Name</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4392726241894883898" datatype="html">
+        <source> * first name is required </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1995477485278091649" datatype="html">
+        <source> * first name must be at least 3 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="910715860955737176" datatype="html">
+        <source> * first name must be at most 10 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6151836871661505450" datatype="html">
+        <source> * last name is required </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">73</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5306572057044329291" datatype="html">
+        <source> * last name must be at least 3 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7216385884781118359" datatype="html">
+        <source> * last name must be at most 10 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8581030677399657459" datatype="html">
+        <source> * email is required </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="761706994066184523" datatype="html">
+        <source> * email is not valid </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">126</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1006682975991274104" datatype="html">
+        <source> * password is required </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">153</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1621295518730630224" datatype="html">
+        <source> * password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">162,163</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9148618642266935671" datatype="html">
+        <source> * password must be at least 6 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">172</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5655381487648703695" datatype="html">
+        <source> * password must be at most 10 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">181</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3241357959735682038" datatype="html">
+        <source>Confirm Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">187,188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5348019087318747827" datatype="html">
+        <source> * confirm password is required </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">208</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7525859210825168157" datatype="html">
+        <source> * confirm password must contain at least one lowercase letter, one uppercase letter, one digit, and one special character </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">217,218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1106157221043917853" datatype="html">
+        <source> * confirm password must be at least 6 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">227</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6377324223397342055" datatype="html">
+        <source> * confirm password must be at most 10 characters </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">236</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8105654671398019942" datatype="html">
+        <source> * password and confirm password must match </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">253</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5866387245304239178" datatype="html">
+        <source><x id="START_BLOCK_IF" equiv-text="@if (isLoading()) {"/><x id="START_TAG_APP_LOADER_BTN" ctype="x-app_loader_btn" equiv-text="&lt;app-loader-btn&gt;"/><x id="CLOSE_TAG_APP_LOADER_BTN" ctype="x-app_loader_btn" equiv-text="&lt;/app-loader-btn&gt;"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Register <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">266,269</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5277739594710154939" datatype="html">
+        <source>Already have an account?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/auth/Components/auth/register/register.component.html</context>
+          <context context-type="linenumber">279,280</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -1,0 +1,281 @@
+<div class="parent w-100 d-flex flex-column justify-content-center">
+  <div class="row">
+    <div class="col col-12">
+      <h2 class="text-center" i18n>Register New Account</h2>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col col-8 m-auto">
+      <form [formGroup]="registerFrom" (ngSubmit)="onSubmit()">
+        <div class="d-flex gap-2 justify-content-center align-items-center">
+          <div class="form-group flex-grow-1">
+            <label for="first-name" i18n>First Name</label>
+            <input
+              formControlName="firstName"
+              type="text"
+              class="form-control"
+              id="first-name"
+              placeholder="Essa"
+            />
+          </div>
+          <div class="form-group flex-grow-1">
+            <label for="last-name" i18n>Last Name</label>
+            <input
+              formControlName="lastName"
+              type="text"
+              class="form-control"
+              id="last-name"
+              placeholder="Ahmed"
+            />
+          </div>
+        </div>
+        <div
+          *ngIf="
+            getControler('firstName').invalid &&
+            getControler('firstName')?.touched
+          "
+        >
+          <small
+            *ngIf="getControler('firstName')?.hasError('required')"
+            class="text-danger"
+            i18n
+          >
+            * first name is required
+          </small>
+          <small
+            *ngIf="getControler('firstName')?.hasError('minlength')"
+            class="text-danger"
+            i18n
+          >
+            * first name must be at least 3 characters
+          </small>
+          <small
+            *ngIf="getControler('firstName')?.hasError('maxlength')"
+            class="text-danger"
+            i18n
+          >
+            * first name must be at most 10 characters
+          </small>
+        </div>
+        <div
+          *ngIf="
+            getControler('lastName').invalid &&
+            getControler('lastName')?.touched
+          "
+        >
+          <div>
+            <small
+              *ngIf="getControler('lastName')?.hasError('required')"
+              class="text-danger"
+              i18n
+            >
+              * last name is required
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('lastName')?.hasError('minlength')"
+              class="text-danger"
+              i18n
+            >
+              * last name must be at least 3 characters
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('lastName')?.hasError('maxlength')"
+              class="text-danger"
+              i18n
+            >
+              * last name must be at most 10 characters
+            </small>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="email" i18n>Email</label>
+          <input
+            formControlName="email"
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="example@gmail.com"
+          />
+        </div>
+        <div
+          *ngIf="
+            getControler('email').invalid && getControler('email')?.touched
+          "
+        >
+          <div>
+            <small
+              *ngIf="getControler('email')?.hasError('required')"
+              class="text-danger"
+              i18n
+            >
+              * email is required
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('email')?.hasError('email')"
+              class="text-danger"
+              i18n
+            >
+              * email is not valid
+            </small>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="password" i18n>Password</label>
+          <input
+            formControlName="password"
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="******"
+          />
+        </div>
+        <div
+          *ngIf="
+            getControler('password').invalid &&
+            getControler('password')?.touched
+          "
+        >
+          <div>
+            <small
+              *ngIf="getControler('password')?.hasError('required')"
+              class="text-danger"
+              i18n
+            >
+              * password is required
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('password')?.hasError('pattern')"
+              class="text-danger"
+              i18n
+            >
+              * password must contain at least one lowercase letter, one
+              uppercase letter, one digit, and one special character
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('password')?.hasError('minlength')"
+              class="text-danger"
+              i18n
+            >
+              * password must be at least 6 characters
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('password')?.hasError('maxlength')"
+              class="text-danger"
+              i18n
+            >
+              * password must be at most 10 characters
+            </small>
+          </div>
+        </div>
+        <br />
+        <div class="form-group">
+          <label for="confirm-password" i18n>Confirm Password</label>
+          <input
+            formControlName="confirmPassword"
+            type="password"
+            class="form-control"
+            id="confirm-password"
+            placeholder="******"
+          />
+        </div>
+        <div
+          *ngIf="
+            getControler('confirmPassword').invalid &&
+            getControler('confirmPassword')?.touched
+          "
+        >
+          <div>
+            <small
+              *ngIf="getControler('confirmPassword')?.hasError('required')"
+              class="text-danger"
+              i18n
+            >
+              * confirm password is required
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('confirmPassword')?.hasError('pattern')"
+              class="text-danger"
+              i18n
+            >
+              * confirm password must contain at least one lowercase letter, one
+              uppercase letter, one digit, and one special character
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('confirmPassword')?.hasError('minlength')"
+              class="text-danger"
+              i18n
+            >
+              * confirm password must be at least 6 characters
+            </small>
+          </div>
+          <div>
+            <small
+              *ngIf="getControler('confirmPassword')?.hasError('maxlength')"
+              class="text-danger"
+              i18n
+            >
+              * confirm password must be at most 10 characters
+            </small>
+          </div>
+        </div>
+        <div
+          *ngIf="
+            registerFrom.invalid &&
+            getControler('confirmPassword').touched &&
+            getControler('password').touched
+          "
+        >
+          <div>
+            <small
+              *ngIf="registerFrom?.hasError('passwordMismatch')"
+              class="text-danger"
+              i18n
+            >
+              * password and confirm password must match
+            </small>
+          </div>
+        </div>
+        <br />
+
+        <div class="form-group">
+          <button
+            [disabled]="registerFrom.invalid || isLoading()"
+            type="submit"
+            class="btn w-100 text-center"
+            i18n
+          >
+            @if (isLoading()) {
+            <app-loader-btn></app-loader-btn>
+            } @else { Register }
+          </button>
+        </div>
+      </form>
+      <br />
+      <div
+        class="d-flex justify-content-center align-items-center gap-1 mt-3 login"
+      >
+        <small class="c-grey" i18n>Already have an account?</small>
+        <a [routerLink]="['/auth/login']" i18n>Login</a>
+      </div>
+    </div>
+  </div>
+</div>

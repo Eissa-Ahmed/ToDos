@@ -1,0 +1,11 @@
+<button
+  [ngStyle]="{
+    width: width ?? '150px',
+    backgroundColor: form == true ? '#b36840b6' : backgroundColor ?? '#B36840',
+    color: color ?? 'white'
+  }"
+  [disabled]="form ?? false"
+  type="submit"
+>
+  {{ text }}
+</button>

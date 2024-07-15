@@ -1,0 +1,10 @@
+div {
+  background-color: #eee;
+  border-radius: 6px;
+  width: 50%;
+  margin: 0 auto;
+  cursor: pointer;
+  &:hover {
+    background-color: #ddd;
+  }
+}
