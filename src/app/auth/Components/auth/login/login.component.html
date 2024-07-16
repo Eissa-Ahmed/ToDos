@@ -82,7 +82,11 @@
           <small i18n>Don't have an account? </small>
           <a [routerLink]="['/auth/register']" i18n>Register</a>
         </div>
-        <small class="forget" (click)="onForgetPassword()" i18n
+        <small
+          [routerLink]="['/auth/forget-password']"
+          class="forget"
+          (click)="onForgetPassword()"
+          i18n
           >Forget Password ?</small
         >
       </div>

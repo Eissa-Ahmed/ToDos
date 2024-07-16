@@ -4,21 +4,33 @@ import { LoginComponent } from './Components/auth/login/login.component';
 import { RegisterComponent } from './Components/auth/register/register.component';
 import { AuthComponent } from './Components/auth/auth.component';
 import { registerCanDeActivateGuard } from '../guard/register-can-de-activate.guard';
+import { ForgetPasswordComponent } from './Components/auth/forget-password/forget-password.component';
 
 const routes: Routes = [
   {
-    path: '', component: AuthComponent, title: 'Auth', children: [
+    path: '',
+    component: AuthComponent,
+    title: 'Auth',
+    children: [
       { path: '', redirectTo: 'login', pathMatch: 'full' },
       { path: 'login', component: LoginComponent, title: 'Login' },
-      { path: 'register', component: RegisterComponent, canDeactivate: [registerCanDeActivateGuard], title: 'Register' },
-    ]
+      {
+        path: 'register',
+        component: RegisterComponent,
+        canDeactivate: [registerCanDeActivateGuard],
+        title: 'Register',
+      },
+      {
+        path: 'forget-password',
+        component: ForgetPasswordComponent,
+        title: 'Forget',
+      },
+    ],
   },
-
-
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AuthRoutingModule { }
+export class AuthRoutingModule {}

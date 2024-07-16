@@ -13,9 +13,8 @@ import { RegisterComponent } from './Components/auth/register/register.component
 import { SideRightAuthComponent } from './Components/auth/side-right-auth/side-right-auth.component';
 import { OrComponent } from './Components/auth/or/or.component';
 import { SocialGoogleComponent } from './Components/auth/social-google/social-google.component';
-
-
-
+import { ForgetPasswordComponent } from './Components/auth/forget-password/forget-password.component';
+import { InputOtpModule } from 'primeng/inputotp';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,8 @@ import { SocialGoogleComponent } from './Components/auth/social-google/social-go
     SocialGoogleComponent,
     SocialFacebookComponent,
     SideRightAuthComponent,
-    OrComponent
+    OrComponent,
+    ForgetPasswordComponent,
   ],
   imports: [
     CommonModule,
@@ -36,7 +36,7 @@ import { SocialGoogleComponent } from './Components/auth/social-google/social-go
     DynamicComponentModule,
     SharedComponentsModule,
     HttpClientModule,
-
+    InputOtpModule,
   ],
 })
-export class AuthModule { }
+export class AuthModule {}
