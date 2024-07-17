@@ -16,7 +16,8 @@ import { TitleStrategy } from '@angular/router';
 import { CustomTitleStrategy } from './title_Strategy/customTitleStrategy';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Environment } from './environment';
+import { provideLottieOptions } from 'ngx-lottie';
+import player from 'lottie-web';
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
@@ -36,6 +37,9 @@ import { Environment } from './environment';
       withInterceptors([bearerTokenInterceptor, versioningInterceptor])
     ),
     { provide: TitleStrategy, useClass: CustomTitleStrategy },
+    provideLottieOptions({
+      player: () => player,
+    }),
   ],
 })
 export class AppModule {}

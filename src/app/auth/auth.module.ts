@@ -15,6 +15,10 @@ import { OrComponent } from './Components/auth/or/or.component';
 import { SocialGoogleComponent } from './Components/auth/social-google/social-google.component';
 import { ForgetPasswordComponent } from './Components/auth/forget-password/forget-password.component';
 import { InputOtpModule } from 'primeng/inputotp';
+import { InputTextModule } from 'primeng/inputtext';
+import { FloatLabelModule } from 'primeng/floatlabel';
+import { TimerComponent } from './Components/auth/forget-password/timer/timer.component';
+import { LottieComponent } from 'ngx-lottie';
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { InputOtpModule } from 'primeng/inputotp';
     SideRightAuthComponent,
     OrComponent,
     ForgetPasswordComponent,
+    TimerComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +42,9 @@ import { InputOtpModule } from 'primeng/inputotp';
     SharedComponentsModule,
     HttpClientModule,
     InputOtpModule,
+    InputTextModule,
+    FloatLabelModule,
+    LottieComponent,
   ],
 })
 export class AuthModule {}
