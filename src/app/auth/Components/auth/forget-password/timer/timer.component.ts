@@ -40,6 +40,7 @@ export class TimerComponent implements OnInit {
         this.timeLeft.set(5);
         this.minutes.set(Math.floor(this.timeLeft() / 60));
         this.seconds.set(this.timeLeft() % 60);
+        this.startTimer();
       }
     });
   }
