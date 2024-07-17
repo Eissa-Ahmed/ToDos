@@ -1,4 +1,7 @@
-<div class="d-flex justify-content-center align-items-center">
+<div
+  *ngIf="timeLeft() != 0"
+  class="d-flex justify-content-center align-items-center"
+>
   <h1>
     {{ minutes() < 10 ? "0" + minutes() : minutes() }}:{{
       seconds() < 10 ? "0" + seconds() : seconds()

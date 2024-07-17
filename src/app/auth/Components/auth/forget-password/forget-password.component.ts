@@ -23,7 +23,7 @@ export class ForgetPasswordComponent implements OnInit {
   value: string = '';
   isSending: WritableSignal<boolean> = signal<boolean>(false);
   isLoading: WritableSignal<boolean> = signal<boolean>(false);
-  timerisRunning: WritableSignal<boolean> = signal<boolean>(false);
+  timerisRunning: WritableSignal<boolean | null> = signal<boolean | null>(null);
 
   constructor(private forgetPasswordService: ForgetPasswordService) {}
   ngOnInit(): void {
@@ -31,6 +31,7 @@ export class ForgetPasswordComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
+    // this.forgetPasswordService.setTimer(true);
     this.isSending.set(true);
   }
   confirmOtp() {
