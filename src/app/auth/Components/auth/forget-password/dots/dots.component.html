@@ -1,0 +1,5 @@
+<div class="parent w-100 d-flex justify-content-center align-items-center">
+  @for (item of [1,2,3]; track $index) {
+  <div class="mx-2" [ngClass]="{ fill: $index == fill() }"></div>
+  }
+</div>

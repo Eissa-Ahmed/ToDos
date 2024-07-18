@@ -5,6 +5,10 @@ import { RegisterComponent } from './Components/auth/register/register.component
 import { AuthComponent } from './Components/auth/auth.component';
 import { registerCanDeActivateGuard } from '../guard/register-can-de-activate.guard';
 import { ForgetPasswordComponent } from './Components/auth/forget-password/forget-password.component';
+import { SendOtpComponent } from './Components/auth/forget-password/send-otp/send-otp.component';
+import { CheckOtpComponent } from './Components/auth/forget-password/check-otp/check-otp.component';
+import { ResetPasswordComponent } from './Components/auth/forget-password/reset-password/reset-password.component';
+import { allowForgetPasswordGuard } from '../guard/allow-forget-password.guard';
 
 const routes: Routes = [
   {
@@ -24,6 +28,11 @@ const routes: Routes = [
         path: 'forget-password',
         component: ForgetPasswordComponent,
         title: 'Forget',
+        children: [
+          { path: '', component: SendOtpComponent, title: 'OTP' },
+          { path: 'check-otp', component: CheckOtpComponent, title: 'OTP' },
+          { path: 'reset-password', component: ResetPasswordComponent, title: 'Reset', canActivate: [allowForgetPasswordGuard] }
+        ]
       },
     ],
   },
@@ -33,4 +42,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class AuthRoutingModule {}
+export class AuthRoutingModule { }

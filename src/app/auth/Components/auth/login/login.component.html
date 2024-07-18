@@ -2,11 +2,7 @@
   <div class="row">
     <div class="col col-12">
       <div class="d-flex justify-content-center">
-        <img
-          src="assets/Images/Animation - 1721128766462.gif"
-          width="200px"
-          alt=""
-        />
+        <ng-lottie [options]="option"></ng-lottie>
       </div>
     </div>
     <div class="col col-8 m-auto">
@@ -57,11 +53,11 @@
           </div>
         </div>
         <br />
-        <div class="form-group">
+        <div class="form-group text-center">
           <button
             [disabled]="loginForm.invalid || isLoading()"
             type="submit"
-            class="btn w-100 text-center"
+            class="btn w-50 text-center"
             i18n
           >
             @if (isLoading()) {

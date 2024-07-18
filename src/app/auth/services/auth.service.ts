@@ -18,6 +18,7 @@ export class AuthService {
   private jwtServices = inject(JwtService);
   private user: BehaviorSubject<IUser | null> = new BehaviorSubject<IUser | null>(null);
   private readonly isAuthenticated: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private allowResetPassword: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   constructor(private http: HttpClient, private router: Router) { }
 
   login(email: string, password: string): Observable<IResponse<IAuthenticationModel | null>> {
@@ -40,8 +41,27 @@ export class AuthService {
       })
     );
   }
-  ContinueWithGoogle(Token: string): Observable<IResponse<IAuthenticationModel | null>> {
 
+  getAllowResetPassword(): Observable<boolean> {
+    const isAllowed = localStorage.getItem('allowResetPassword');
+    if (isAllowed) this.allowResetPassword.next(JSON.parse(isAllowed));
+    return this.allowResetPassword;
+  }
+  setAllowResetPassword(value: boolean) {
+    localStorage.setItem('allowResetPassword', value.toString());
+    this.allowResetPassword.next(value);
+  }
+
+  forgetPassword(Email: string): Observable<IResponse<null>> {
+    return this.http.put<IResponse<null>>(`${this.baseUrl}api/authentication/forget-password?email=${Email}`, null);
+  }
+  checkCode(Email: string, Code: string): Observable<IResponse<null>> {
+    return this.http.put<IResponse<null>>(`${this.baseUrl}api/authentication/check-code`, { Email, Code });
+  }
+  confirmPassword(Email: string, Password: string): Observable<IResponse<null>> {
+    return this.http.put<IResponse<null>>(`${this.baseUrl}api/authentication/confirm-password`, { Email, Password });
+  }
+  ContinueWithGoogle(Token: string): Observable<IResponse<IAuthenticationModel | null>> {
     return this.http.post<IResponse<IAuthenticationModel | null>>(`${this.baseUrl}api/authentication/google`, { Token }).pipe(
       tap((response: IResponse<IAuthenticationModel | null>) => {
         if (response.Success) {

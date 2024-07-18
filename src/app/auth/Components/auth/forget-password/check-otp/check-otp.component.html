@@ -1,0 +1,70 @@
+<div *ngIf="msg()" class="parent">
+  <div class="msg d-flex justify-content-start align-items-center gap-3">
+    <i class="fa-regular fa-circle-xmark"></i>
+    <p>
+      <small>{{ msg() }}</small>
+    </p>
+  </div>
+</div>
+<div class="row">
+  <div class="col col-12">
+    <form
+      class="w-100 d-flex flex-column justify-content-center align-items-center h-100"
+      #checkOtp="ngForm"
+      (ngSubmit)="onSubmit(checkOtp)"
+    >
+      <div style="width: 300px; height: 350px">
+        @if (isRight() == null) {
+        <ng-lottie [options]="beforeSend"></ng-lottie>
+        }@else if (isRight()) {
+        <ng-lottie [options]="right"></ng-lottie>
+        }@else if (!isRight()) {
+        <ng-lottie [options]="wrong"></ng-lottie>
+        }
+      </div>
+      <br />
+      <br />
+      <div class="send-code">
+        <small
+          >We send a code to your email <span>{{ email() }}</span></small
+        >
+      </div>
+      <br />
+      <div class="form-group">
+        <app-timer></app-timer>
+        <p-inputOtp
+          [(ngModel)]="value"
+          [integerOnly]="true"
+          name="otp"
+          [length]="6"
+          [autofocus]="true"
+          required="true"
+        />
+      </div>
+      <br />
+      <div class="form-group w-50">
+        <button
+          [disabled]="checkOtp.invalid || isLoading() || value!.length != 6"
+          type="submit"
+          class="btn btn-primary w-100 text-center"
+          i18n
+        >
+          @if (isLoading()) {
+          <app-loader-btn></app-loader-btn>
+          } @else { Check OTP}
+        </button>
+
+        <br />
+        <br />
+      </div>
+    </form>
+    @if (statusTimer() == false) {
+    <div
+      class="resendCode d-flex justify-content-center align-items-center gap-2"
+    >
+      <small i18n>Didn't receive code?</small>
+      <a (click)="resendOtp()" class="resend" i18n>Resend</a>
+    </div>
+    }
+  </div>
+</div>

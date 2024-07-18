@@ -1,0 +1,58 @@
+<div *ngIf="msg()" class="parent">
+  <div class="msg d-flex justify-content-start align-items-center gap-3">
+    <i class="fa-regular fa-circle-xmark"></i>
+    <p>
+      <small>{{ msg() }}</small>
+    </p>
+  </div>
+</div>
+<div class="row h-100">
+  <div class="col col-12 h-100">
+    <form
+      class="w-100 d-flex flex-column justify-content-center align-items-center h-100"
+      #forgetPasswordForm="ngForm"
+      (ngSubmit)="onSubmit(forgetPasswordForm)"
+    >
+      <div class="w-50">
+        <ng-lottie [options]="isLoading() ? afterSend : beforeSend"></ng-lottie>
+      </div>
+      <br />
+      <br />
+      <p class="worries">No worries, we will send you an OTP</p>
+      <div class="formgroup w-50">
+        <input
+          [disabled]="isLoading()"
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="Enter Email"
+          name="email"
+          required
+          email
+          ngModel
+        />
+      </div>
+      <br />
+
+      <div class="form-group w-25">
+        <button
+          [disabled]="forgetPasswordForm.invalid || isLoading()"
+          type="submit"
+          class="btn btn-primary w-100 text-center"
+          i18n
+        >
+          @if (isLoading()) {
+          <app-loader-btn></app-loader-btn>
+          } @else { Send OTP}
+        </button>
+      </div>
+    </form>
+    <div
+      (click)="backToLogin()"
+      class="back-login mt-4 d-flex justify-content-center align-items-center gap-3"
+    >
+      <i class="fa-solid fa-arrow-left"></i>
+      <p>Sign in</p>
+    </div>
+  </div>
+</div>

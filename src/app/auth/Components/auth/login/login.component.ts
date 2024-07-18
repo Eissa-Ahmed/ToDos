@@ -17,6 +17,9 @@ export class LoginComponent implements OnDestroy {
   isLoading: WritableSignal<boolean> = signal<boolean>(false);
   subscription: WritableSignal<Subscription | null> = signal<Subscription | null>(null);
   @ViewChild('loginForm', { static: true }) loginForm!: NgForm;
+  option = {
+    path: 'assets/Images/login.json',
+  }
   constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) { }
   onSubmit() {
     this.isLoading.set(true);

@@ -19,6 +19,12 @@ import { InputTextModule } from 'primeng/inputtext';
 import { FloatLabelModule } from 'primeng/floatlabel';
 import { TimerComponent } from './Components/auth/forget-password/timer/timer.component';
 import { LottieComponent } from 'ngx-lottie';
+import { SendOtpComponent } from './Components/auth/forget-password/send-otp/send-otp.component';
+import { CheckOtpComponent } from './Components/auth/forget-password/check-otp/check-otp.component';
+import { ResetPasswordComponent } from './Components/auth/forget-password/reset-password/reset-password.component';
+import { DotsComponent } from './Components/auth/forget-password/dots/dots.component';
+import { ButtonModule } from 'primeng/button';
+import { MessagesModule } from 'primeng/messages';
 
 @NgModule({
   declarations: [
@@ -31,6 +37,10 @@ import { LottieComponent } from 'ngx-lottie';
     OrComponent,
     ForgetPasswordComponent,
     TimerComponent,
+    SendOtpComponent,
+    CheckOtpComponent,
+    ResetPasswordComponent,
+    DotsComponent,
   ],
   imports: [
     CommonModule,
@@ -45,6 +55,8 @@ import { LottieComponent } from 'ngx-lottie';
     InputTextModule,
     FloatLabelModule,
     LottieComponent,
+    ButtonModule,
+    MessagesModule
   ],
 })
-export class AuthModule {}
+export class AuthModule { }
