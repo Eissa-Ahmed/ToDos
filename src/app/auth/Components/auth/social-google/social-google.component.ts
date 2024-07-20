@@ -7,7 +7,7 @@ import { IAuthenticationModel } from '../../../../interfaces/iauthentication-mod
 import { IResponse } from '../../../../interfaces/iresponse';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-
+import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
 @Component({
   selector: 'app-social-google',
   templateUrl: './social-google.component.html',
@@ -18,35 +18,45 @@ export class SocialGoogleComponent implements OnInit {
   constructor(private router: Router,
     private JwtService: JwtService,
     private authService: AuthService,
-    private toastr: ToastrService
+    private toastr: ToastrService,
+    private socialAuthService: SocialAuthService
   ) {
 
   }
 
   ngOnInit() {
     this.initializeGoogleSignIn();
+    this.initialBtnGoogle();
   }
 
-  onLoginWithGoogle() {
-    this.toggleBtnGoogle.set(true);
-  }
   initializeGoogleSignIn() {
+    this.socialAuthService.authState.subscribe({
+      next: (user: SocialUser) => {
+        this.signInWithGoogle(user.idToken);
+      },
+      error: (err) => {
+        this.toastr.error(err.Message);
+      }
+    })
+  }
+
+  initialBtnGoogle() {
     google.accounts.id.initialize({
       client_id: Environment.ClientId,
       callback: this.handleCredentialResponse.bind(this)
-
-    })
+    });
     google.accounts.id.renderButton(
-      document.getElementById('google'),
-      { theme: 'filled_blue', size: 'large', shape: 'rectangle' }
+      document.getElementById("google-signin-button"),
+      { theme: "filled_blue", size: "large" }
     );
-    google.accounts.id.prompt();
-
-  }
-
+  };
 
   handleCredentialResponse(response: any) {
-    this.authService.ContinueWithGoogle(response.credential).subscribe({
+    this.signInWithGoogle(response.credential);
+  }
+
+  signInWithGoogle(Token: string) {
+    this.authService.ContinueWithGoogle(Token).subscribe({
       next: (res: IResponse<IAuthenticationModel | null>) => {
         if (res.StatusCode == 200) {
           this.router.navigate(['/home']);

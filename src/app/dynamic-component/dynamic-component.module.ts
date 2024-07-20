@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoaderComponent } from './loader/loader.component';
 import { Loader2Component } from './loader2/loader2.component';
 import { LoaderBtnComponent } from './loader-btn/loader-btn.component';
+import { CustomErrorComponent } from './custom-error/custom-error.component';
 
 
 
@@ -10,7 +11,8 @@ import { LoaderBtnComponent } from './loader-btn/loader-btn.component';
   declarations: [
     LoaderComponent,
     Loader2Component,
-    LoaderBtnComponent
+    LoaderBtnComponent,
+    CustomErrorComponent
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { LoaderBtnComponent } from './loader-btn/loader-btn.component';
   exports: [
     LoaderComponent,
     Loader2Component,
-    LoaderBtnComponent
+    LoaderBtnComponent,
+    CustomErrorComponent
   ]
 })
 export class DynamicComponentModule { }

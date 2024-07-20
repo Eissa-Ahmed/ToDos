@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
+import { CustomErrorComponent } from './dynamic-component/custom-error/custom-error.component';
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
@@ -30,8 +31,9 @@ import player from 'lottie-web';
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     BrowserModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule
   ],
+
   providers: [
     provideHttpClient(
       withInterceptors([bearerTokenInterceptor, versioningInterceptor])
@@ -42,4 +44,4 @@ import player from 'lottie-web';
     }),
   ],
 })
-export class AppModule {}
+export class AppModule { }

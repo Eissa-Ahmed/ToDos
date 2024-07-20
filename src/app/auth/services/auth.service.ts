@@ -108,7 +108,7 @@ export class AuthService {
     this.isAuthenticated.next(false);
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    google.accounts.id.disableAutoSelect();
+    //google.accounts.id.disableAutoSelect();
     this.router.navigate(['/auth/login']);
   }
 }

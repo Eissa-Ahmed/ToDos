@@ -23,6 +23,7 @@ export class ResetPasswordComponent implements OnInit, OnDestroy {
   formGroup!: FormGroup;
   timeOut: any;
   subscription: Subscription[] = [];
+
   constructor(private router: Router,
     private forgetPasswordService: ForgetPasswordService,
     private formBuilder: FormBuilder,

@@ -19,7 +19,7 @@ export class SendOtpComponent implements OnInit {
     path: 'assets/Images/otpSending.json',
   }
   isLoading: WritableSignal<boolean> = signal<boolean>(false)
-  msg: WritableSignal<string | undefined> = signal<string | undefined>(undefined)
+  msg: WritableSignal<string | null> = signal<string | null>(null)
   constructor(private router: Router,
     private forgetPasswordService: ForgetPasswordService,
     private authService: AuthService) {

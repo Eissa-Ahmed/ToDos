@@ -25,6 +25,9 @@ import { ResetPasswordComponent } from './Components/auth/forget-password/reset-
 import { DotsComponent } from './Components/auth/forget-password/dots/dots.component';
 import { ButtonModule } from 'primeng/button';
 import { MessagesModule } from 'primeng/messages';
+import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
+import { Environment } from '../environment';
+import { CustomErrorComponent } from '../dynamic-component/custom-error/custom-error.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +59,28 @@ import { MessagesModule } from 'primeng/messages';
     FloatLabelModule,
     LottieComponent,
     ButtonModule,
-    MessagesModule
+    MessagesModule,
+    SocialLoginModule,
+  ],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        lang: 'en',
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              Environment.ClientId
+            )
+          }
+        ],
+        onError: (err) => {
+          console.error(err);
+        }
+      } as SocialAuthServiceConfig,
+    }
   ],
 })
 export class AuthModule { }

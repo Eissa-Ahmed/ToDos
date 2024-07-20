@@ -18,6 +18,9 @@ import swal from 'sweetalert2';
 })
 export class RegisterComponent implements CanDeactivateComponent, OnInit, OnDestroy {
 
+  option = {
+    path: 'assets/Images/register.json',
+  }
   registerFrom!: FormGroup;
   isLoading: WritableSignal<boolean> = signal<boolean>(false);
   isSubmited: WritableSignal<boolean> = signal<boolean>(false);

@@ -16,7 +16,7 @@ import {
   styleUrl: './timer.component.scss',
 })
 export class TimerComponent implements OnInit, OnDestroy {
-  timeLeft: WritableSignal<number> = signal<number>(5);
+  timeLeft: WritableSignal<number> = signal<number>(180);
   minutes: WritableSignal<number> = signal<number>(0);
   seconds: WritableSignal<number> = signal<number>(0);
   interval: any;

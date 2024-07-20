@@ -11,7 +11,7 @@ import { AudiosComponent } from './home-page/audios/audios.component';
 import { FilesComponent } from './home-page/files/files.component';
 import { MainPicComponent } from './home-page/pictures/main-pic/main-pic.component';
 import { ListPicComponent } from './home-page/pictures/list-pic/list-pic.component';
-
+import { GalleriaModule } from 'primeng/galleria';
 
 @NgModule({
   declarations: [
@@ -27,7 +27,8 @@ import { ListPicComponent } from './home-page/pictures/list-pic/list-pic.compone
   ],
   imports: [
     CommonModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    GalleriaModule
   ]
 })
 export class HomeModule { }

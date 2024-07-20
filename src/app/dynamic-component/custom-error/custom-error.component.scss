@@ -1,0 +1,24 @@
+.parent {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  padding: 20px;
+  .msg {
+    padding: 8px 12px;
+    border-radius: 8px;
+    background-color: rgba(255, 0, 0, 0.226);
+    border-left: 5px solid red;
+    width: 95%;
+    margin: 0 auto;
+    i {
+      color: red;
+      font-size: 22px;
+    }
+    p {
+      color: red;
+      font-size: 16px;
+      margin: 0;
+    }
+  }
+}
