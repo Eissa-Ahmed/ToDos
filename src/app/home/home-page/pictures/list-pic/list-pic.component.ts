@@ -7,19 +7,15 @@ import { IPaginationInfo } from '../../../../interfaces/ipagination-info';
 @Component({
   selector: 'app-list-pic',
   templateUrl: './list-pic.component.html',
-  styleUrl: './list-pic.component.scss'
+  styleUrl: './list-pic.component.scss',
 })
 export class ListPicComponent implements OnInit {
-
-
   picturesModel: IPicture[] = [];
   isLoading: WritableSignal<boolean> = signal<boolean>(false);
   option = {
     path: 'assets/Images/loading.json',
-  }
-  constructor(private pictureService: PictureService) {
-
-  }
+  };
+  constructor(private pictureService: PictureService) {}
   ngOnInit(): void {
     this.trackPictures();
     this.loadPictures();
@@ -27,12 +23,12 @@ export class ListPicComponent implements OnInit {
   trackPictures() {
     this.pictureService.pictures.subscribe({
       next: (res: IPicture[]) => {
-        this.picturesModel = res;
-
-      }, error: (err) => {
+        this.picturesModel = [...this.picturesModel, ...res];
+      },
+      error: (err) => {
         console.log(err);
-      }
-    })
+      },
+    });
   }
   loadPictures() {
     this.isLoading.set(true);
@@ -46,7 +42,7 @@ export class ListPicComponent implements OnInit {
       },
       complete: () => {
         this.isLoading.set(false);
-      }
+      },
     });
   }
 

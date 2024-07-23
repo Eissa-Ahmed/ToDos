@@ -4,7 +4,7 @@ export interface IMedia {
   Medias: Media[];
 }
 
-interface Media {
+export interface Media {
   MediaType: string;
   MediaName: string;
   Media: string;
