@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { defer, EMPTY, filter, from, fromEvent, iif, interval, map, mergeAll, Observable, of, range, take, throwError, timer } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ToastrService } from 'ngx-toastr';
+import { catchError, concat, concatAll, concatMap, debounceTime, defer, delay, EMPTY, exhaustAll, exhaustMap, filter, from, fromEvent, iif, interval, map, merge, mergeAll, mergeMap, Observable, of, range, retry, Subscription, take, throttleTime, throwError, timer } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -9,3 +10,43 @@ import { defer, EMPTY, filter, from, fromEvent, iif, interval, map, mergeAll, Ob
 export class AppComponent {
 
 }
+
+
+
+
+
+/*
+  Concat ==> Done
+  ConcatAll ==> Done
+  ConcatMap ==> Done
+  -------------------
+  Merge ==> Done
+  MergeAll ==> Done
+  MergeMap ==> Done
+  -------------------
+  Skip ==> Done
+  Take ==> Done
+  -------------------
+  Exhaust ==> Done
+  ExhaustAll ==> Done
+  ExhaustMap ==> Done
+  -------------------
+  CatchError ==> Done Done
+  Retry ==> Done Done
+  Tap ==> Done Done
+  Map ==> Done Done
+  Delay ==> Done Done
+  Debounce ==> Done Done
+  Throttle ==> Done Done
+  -------------------
+  Count ==> Done Done
+  Distinct ==> Done Done
+  Max ==> Done Done
+  Min ==> Done Done
+  -------------------
+  Find
+  Filter
+  FindIndex
+  IsEmpty
+*/
+

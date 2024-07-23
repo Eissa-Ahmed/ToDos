@@ -12,6 +12,11 @@ import { FilesComponent } from './home-page/files/files.component';
 import { MainPicComponent } from './home-page/pictures/main-pic/main-pic.component';
 import { ListPicComponent } from './home-page/pictures/list-pic/list-pic.component';
 import { GalleriaModule } from 'primeng/galleria';
+import { LottieComponent } from 'ngx-lottie';
+import { AddPicComponent } from './home-page/pictures/add-pic/add-pic.component';
+import { ButtonModule } from 'primeng/button';
+import { InputTextModule } from 'primeng/inputtext';
+import { DialogModule } from 'primeng/dialog';
 
 @NgModule({
   declarations: [
@@ -23,12 +28,17 @@ import { GalleriaModule } from 'primeng/galleria';
     AudiosComponent,
     FilesComponent,
     MainPicComponent,
-    ListPicComponent
+    ListPicComponent,
+    AddPicComponent
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-    GalleriaModule
+    GalleriaModule,
+    LottieComponent,
+    DialogModule,
+    ButtonModule,
+    InputTextModule
   ]
 })
 export class HomeModule { }

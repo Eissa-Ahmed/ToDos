@@ -1,11 +1,22 @@
+@if (!isLoading()) {
 <div class="d-flex justify-content-center flex-wrap">
-  @for (item of listOfImages; track $index) {
+  @for (item of picturesModel; track $index) {
   <div
-    (click)="onSelect(item)"
-    class="flex-grow-1"
+    (click)="onSelect(item.Base64)"
+    class="flex-grow-1 m-1"
     style="width: 200px; cursor: pointer"
   >
-    <img [src]="item" width="100%" alt="img" />
+    <img [src]="item.Base64" width="100%" height="100%" alt="img" />
   </div>
   }
 </div>
+}@else {
+<div
+  class="loading-parent w-100 d-flex justify-content-center align-items-center"
+>
+  <div style="width: 100px">
+    <ng-lottie [options]="option"></ng-lottie>
+  </div>
+</div>
+
+}
