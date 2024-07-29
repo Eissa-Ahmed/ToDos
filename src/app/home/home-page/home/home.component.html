@@ -1,1 +1,43 @@
-<p>home works!</p>
+<!-- <div>
+  <p-paginator
+    (onPageChange)="onPageChange($event)"
+    [first]="first"
+    [rows]="rows"
+    [totalRecords]="120"
+    [rowsPerPageOptions]="[10, 20, 30]"
+  />
+</div> -->
+<button class="btn btn-primary" (click)="add()">Add</button>
+<div class="d-flex justify-content-center flex-wrap">
+  @if (!isLoading()) { @for (item of (medias | async ); track $index) {
+  <div class="card" style="width: 18rem">
+    @if (item.Medias[0]) {
+    <img
+      [src]="'data:image/jpeg;base64,' + item.Medias[0].Base64"
+      class="card-img-top"
+      alt="..."
+    />
+    }
+    <div class="card-body">
+      <h5 class="card-title">{{ item.Title }}</h5>
+      <p class="card-text">
+        {{ item.Description }}
+      </p>
+      <a href="#" class="btn btn-primary">Edit</a>
+      <button class="btn btn-danger" (click)="onDeleted(item.Id)">
+        Delete
+      </button>
+    </div>
+  </div>
+
+  } }@else {
+  <div
+    class="loading-parent w-100 d-flex justify-content-center align-items-center"
+  >
+    <div style="width: 100px">
+      <ng-lottie [options]="option"></ng-lottie>
+    </div>
+  </div>
+
+  }
+</div>

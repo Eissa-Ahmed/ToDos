@@ -28,7 +28,10 @@ import { MessagesModule } from 'primeng/messages';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from '@abacritt/angularx-social-login';
 import { Environment } from '../environment';
 import { CustomErrorComponent } from '../dynamic-component/custom-error/custom-error.component';
-
+import { StoreModule } from '@ngrx/store';
+import { authReducer } from './NgRx/auth.reducers';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './NgRx/auth.efects';
 @NgModule({
   declarations: [
     LoginComponent,
@@ -61,6 +64,8 @@ import { CustomErrorComponent } from '../dynamic-component/custom-error/custom-e
     ButtonModule,
     MessagesModule,
     SocialLoginModule,
+    StoreModule.forFeature('auth', authReducer),
+    EffectsModule.forFeature([AuthEffects]),
   ],
   providers: [
     {

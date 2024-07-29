@@ -22,7 +22,7 @@
           <a routerLink="/home/files" routerLinkActive="active" i18n>Files</a>
         </li>
       </ul>
-      <div class="logout" (click)="onLogout()">
+      <div *ngIf="isLogged | async" class="logout" (click)="onLogout()">
         <i class="fa-solid fa-right-from-bracket"></i>
       </div>
     </nav>

@@ -8,6 +8,9 @@ import { IResponse } from '../../../../interfaces/iresponse';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { GoogleLoginProvider, SocialAuthService, SocialUser } from '@abacritt/angularx-social-login';
+import { retry, tap } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppAction } from '../../../NgRx/auth.allAction';
 @Component({
   selector: 'app-social-google',
   templateUrl: './social-google.component.html',
@@ -19,7 +22,8 @@ export class SocialGoogleComponent implements OnInit {
     private JwtService: JwtService,
     private authService: AuthService,
     private toastr: ToastrService,
-    private socialAuthService: SocialAuthService
+    private socialAuthService: SocialAuthService,
+    private store: Store
   ) {
 
   }
@@ -56,18 +60,28 @@ export class SocialGoogleComponent implements OnInit {
   }
 
   signInWithGoogle(Token: string) {
-    this.authService.ContinueWithGoogle(Token).subscribe({
-      next: (res: IResponse<IAuthenticationModel | null>) => {
-        if (res.StatusCode == 200) {
-          this.router.navigate(['/home']);
-        }
-      },
-      error: (err) => {
-        let error: IResponse<IAuthenticationModel | null> = err.error;
-        this.toastr.error(err.Message);
-      },
-      complete: () => {
-      }
-    });
+    this.store.dispatch(AppAction.continueWithGoogleAction({ Token: Token }));
+    //this.authService.ContinueWithGoogle(Token).pipe(
+    //   retry(1),
+    //   tap((res: IResponse<IAuthenticationModel | null>) => {
+    //     if (res.StatusCode == 200) {
+    //       // this.store.dispatch(loginAction({ user: res.Data! }));
+    //     }
+    //   })
+    // ).subscribe({
+    //   next: (res: IResponse<IAuthenticationModel | null>) => {
+    //     if (res.StatusCode == 200) {
+    //       this.router.navigate(['/home']);
+    //     }
+    //   },
+    //   error: (err) => {
+    //     let error: IResponse<IAuthenticationModel | null> = err.error;
+    //     this.toastr.error(err.Message);
+    //   },
+    //   complete: () => {
+    //   }
+    //});
   }
+
+
 }

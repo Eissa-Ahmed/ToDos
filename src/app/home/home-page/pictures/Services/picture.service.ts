@@ -4,7 +4,7 @@ import { map, Observable, Subject, tap } from 'rxjs';
 import { IResponse } from '../../../../interfaces/iresponse';
 import { IPicture } from '../../../../interfaces/ipicture';
 import { IPaginationInfo } from '../../../../interfaces/ipagination-info';
-import { IMedia, Media } from '../../../../interfaces/imedia';
+import { IMedia, Media, Media2 } from '../../../../interfaces/imedia';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ import { IMedia, Media } from '../../../../interfaces/imedia';
 export class PictureService {
   picture: EventEmitter<string | null> = new EventEmitter<string | null>();
   public pictures: Subject<IPicture[]> = new Subject<IPicture[]>();
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getPictures(): IPicture[] {
     let result: IPicture[] = [];
@@ -65,15 +65,15 @@ export class PictureService {
       .pipe(
         tap((response: IResponse<IMedia>) => {
           if (response.Success) {
-            response.Data!.Medias.forEach((media: Media) => {
+            response.Data!.Medias.forEach((media: Media2) => {
               this.pictures.next([
                 {
                   Id: '',
-                  Name: media.MediaName,
+                  Name: media.Name,
                   Extension: 'jpg',
-                  Type: media.MediaType,
+                  Type: media.Type,
                   Size: 0,
-                  Base64: 'data:image/' + 'jpeg' + ';base64,' + media.Media,
+                  Base64: 'data:image/' + 'jpeg' + ';base64,' + media.Base64,
                 } as IPicture,
               ]);
             });

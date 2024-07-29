@@ -18,9 +18,10 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { provideLottieOptions } from 'ngx-lottie';
 import player from 'lottie-web';
-import { CustomErrorComponent } from './dynamic-component/custom-error/custom-error.component';
 import { StoreModule } from '@ngrx/store';
-import { reducer } from './NgRx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+
 
 @NgModule({
   declarations: [AppComponent, ErrorComponent],
@@ -34,7 +35,10 @@ import { reducer } from './NgRx/store';
     ToastrModule.forRoot(),
     BrowserModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({ counter: reducer })
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: false }),
+    // StoreModule.forFeature(fromApp.appFeatureKey, fromApp.reducers),
   ],
 
   providers: [

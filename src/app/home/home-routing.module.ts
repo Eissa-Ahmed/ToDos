@@ -6,12 +6,13 @@ import { PicturesComponent } from './home-page/pictures/pictures.component';
 import { VideosComponent } from './home-page/videos/videos.component';
 import { AudiosComponent } from './home-page/audios/audios.component';
 import { FilesComponent } from './home-page/files/files.component';
+import { resolveHomeResolver } from './resolver/resolve-home.resolver';
 
 const routes: Routes = [
   {
     path: '', component: HomePageComponent, children: [
       { path: '', redirectTo: 'all', pathMatch: 'full' },
-      { path: 'all', component: HomeComponent, title: 'Home' },
+      { path: 'all', component: HomeComponent, title: 'Home', resolve: { medias: resolveHomeResolver } },
       { path: 'pictures', component: PicturesComponent, title: 'Pictures' },
       { path: 'videos', component: VideosComponent, title: 'Videos' },
       { path: 'audios', component: AudiosComponent, title: 'Audios' },

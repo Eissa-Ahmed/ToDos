@@ -17,6 +17,11 @@ import { AddPicComponent } from './home-page/pictures/add-pic/add-pic.component'
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { DialogModule } from 'primeng/dialog';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { PaginatorModule } from 'primeng/paginator';
+import { homeReducer } from './home-page/NgRx/Home/home.reducer';
+import { HomeEffects } from './home-page/NgRx/Home/home.effects';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,10 @@ import { DialogModule } from 'primeng/dialog';
     LottieComponent,
     DialogModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    PaginatorModule,
+    StoreModule.forFeature({ name: 'home', reducer: homeReducer }),
+    EffectsModule.forFeature([HomeEffects]),
   ]
 })
 export class HomeModule { }

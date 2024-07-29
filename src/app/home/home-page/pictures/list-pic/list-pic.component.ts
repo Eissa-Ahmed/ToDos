@@ -15,10 +15,13 @@ export class ListPicComponent implements OnInit {
   option = {
     path: 'assets/Images/loading.json',
   };
-  constructor(private pictureService: PictureService) {}
+  constructor(private pictureService: PictureService) { }
   ngOnInit(): void {
     this.trackPictures();
-    this.loadPictures();
+    this.picturesModel = JSON.parse(localStorage.getItem('pictures') || '[]');
+    if (this.picturesModel.length == 0) {
+      this.loadPictures();
+    }
   }
   trackPictures() {
     this.pictureService.pictures.subscribe({
@@ -34,6 +37,7 @@ export class ListPicComponent implements OnInit {
     this.isLoading.set(true);
     this.pictureService.getAllPictures(1, 10).subscribe({
       next: (res: IResponse<IPaginationInfo<IPicture[]>>) => {
+        //localStorage.setItem('pictures', JSON.stringify(res.Data?.Data));
         console.log(res);
       },
       error: (err) => {
